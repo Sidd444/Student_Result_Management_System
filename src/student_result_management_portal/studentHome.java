@@ -102,6 +102,22 @@ public class studentHome extends javax.swing.JFrame {
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
+        String rollno=jTextField1.getText();
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/srm","root","rootpassword");
+            Statement st=con.createStatement();           
+            ResultSet rs=st.executeQuery("select * from student inner join result where student.rollno='"+rollno+"'and result.rollno='"+rollno+'"');
+            if(rs.next()){
+                setVisible(false);
+                new studentAdmin(rollno).setVisible(true);
+            }
+            else{
+                JOptionPane.showMessageDialog(null,"Incorrect roll no.");
+            }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, e.toString());
+        }
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
