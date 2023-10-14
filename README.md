@@ -4,6 +4,9 @@
 
 **Student Result Management System** is a Java-based application designed to simplify the process of managing student information and their academic results. This project utilizes Apache NetBeans as the development environment, Java for coding, Ant for building, and MySQL for database management.
 
+##Demo Working Video Link
+https://www.loom.com/share/c3981a794e124ba7863816e4d79b1bbf?sid=d1d6ab96-62ec-4db6-a72f-cfa5a5991997
+
 ## Features
 
 - **Admin Login:** Secure access for administrators to manage student records.
